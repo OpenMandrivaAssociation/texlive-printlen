@@ -1,3 +1,9 @@
+# revision 19847
+# category Package
+# catalog-ctan /macros/latex/contrib/printlen
+# catalog-date 2010-09-22 14:58:28 +0200
+# catalog-license lppl
+# catalog-version 1.1a
 Name:		texlive-printlen
 Version:	1.1a
 Release:	1
@@ -44,6 +50,7 @@ stretch or shrink values.
 %{_texmfdistdir}/tex/latex/printlen/printlen.sty
 %doc %{_texmfdistdir}/doc/latex/printlen/printlen-doc.pdf
 %doc %{_texmfdistdir}/doc/latex/printlen/printlen-doc.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -54,3 +61,5 @@ stretch or shrink values.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
