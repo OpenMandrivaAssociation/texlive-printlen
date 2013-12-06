@@ -6,7 +6,7 @@
 # catalog-version 1.1a
 Name:		texlive-printlen
 Version:	1.1a
-Release:	5
+Release:	6
 Summary:	Print lengths using specified units
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/printlen
