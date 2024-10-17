@@ -3,7 +3,7 @@ Version:	19847
 Release:	2
 Summary:	Print lengths using specified units
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/printlen
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/printlen
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/printlen.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/printlen.doc.r%{version}.tar.xz
