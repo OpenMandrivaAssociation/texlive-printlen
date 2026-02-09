@@ -1,6 +1,6 @@
 Name:		texlive-printlen
-Version:	19847
-Release:	2
+Version:	77677
+Release:	1
 Summary:	Print lengths using specified units
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/printlen
