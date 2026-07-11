@@ -1,47 +1,26 @@
-Name:		texlive-printlen
-Version:	77677
-Release:	1
+%global tl_name printlen
+%global tl_revision 79461
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.1a
+Release:	%{tl_revision}.1
 Summary:	Print lengths using specified units
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/printlen
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/printlen.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/printlen.doc.r%{version}.tar.xz
+License:	lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/printlen.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/printlen.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-\printlength{length} prints the value of a LaTeX length in the
-units specified by \uselengthunit{unit} ('unit' may be any TeX
-length unit except for scaled point, viz., any of: pt, pc, in,
-mm, cm, bp, dd or cc). When the unit is pt, the printed length
-value will include any stretch or shrink; otherwise these are
-not printed. The 'unit' argument may also be PT, in which case
-length values will be printed in point units but without any
-stretch or shrink values.
+\printlength{length} prints the value of a LaTeX length in the units
+specified by \uselengthunit{unit} ('unit' may be any TeX length unit
+except for scaled point, viz., any of: pt, pc, in, mm, cm, bp, dd or
+cc). When the unit is pt, the printed length value will include any
+stretch or shrink; otherwise these are not printed. The 'unit' argument
+may also be PT, in which case length values will be printed in point
+units but without any stretch or shrink values.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/printlen/printlen.sty
-%doc %{_texmfdistdir}/doc/latex/printlen/printlen-doc.pdf
-%doc %{_texmfdistdir}/doc/latex/printlen/printlen-doc.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
